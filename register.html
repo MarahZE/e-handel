@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Sign in</title>
 </head>
 <body>
-    <form action="signIn.php" method="post">
-        <h1>Sign in</h1>
-        <input type="text" name="name" placeholder="Name" required=""> <br>
-        <input type="text" name="email" placeholder="email" required=""> <br>
-        <input type="text" name="password" placeholder="password" required=""> <br>
-        <input type="submit" name="sign-in" value="Sign in" />
-
-    </form>
+    <header>
+        <nav class='navbar'>
+            logo
+            <a class='link' href="home.php">Home</a>
+            <a class='link' href="logout.php">Log out</a>
+            <a class='link' href="register.html">Sign in</a>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <form action="signIn.php" method="post" class="form">
+                <h1>Sign in</h1>
+                <input type="text" name="name" placeholder="Name" required=""> <br>
+                <input type="text" name="email" placeholder="email" required=""> <br>
+                <input type="text" name="password" placeholder="password" required=""> <br>
+                <input type="submit" name="sign-in" value="Sign in" />
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Author: Marah Zeibak</p>
+        <p><a href="mailto:hege@example.com">marah@example.com</a></p>
+    </footer>
 </body>
 </html>
