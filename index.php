@@ -17,7 +17,7 @@ session_start();
     <header>
         <nav class='navbar'>
             logo
-            <a class='link' href="home.php">Home</a>
+            <a class='link' href="selectMakeup.php">Makeup</a>
             <a class='link' href="logout.php">Log out</a>
             <a class='link' href="register.html">Sign in</a>
         </nav>

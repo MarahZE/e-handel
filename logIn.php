@@ -20,6 +20,6 @@ if (isset($_POST['log-in'])) {
         echo '<br>' . $row['Email'];
         $_SESSION['name'] = $row['Name'];
         $_SESSION['email'] = $row['Email'];
-        header("location:home.php");
+        header("location:selectMakeup.php");
     }
 }
