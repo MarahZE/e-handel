@@ -16,10 +16,11 @@ if (isset($_SESSION['name'])) {
     if ($check > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             $temp_html = $html_pieces[1];
-            echo ' <img src= "data:image;base64,' . base64_encode($row['Image']) . '" width="300" height="400"/>';
+            $temp_html = str_replace('---$img---', '<img src= "data:image;base64,' . base64_encode($row['Image']) . '" width="300" height="400"/>', $temp_html);
             $temp_html = str_replace('---$id---', $row['ID'], $temp_html);
             $temp_html = str_replace('---$name---', $row['Name'], $temp_html);
             $temp_html = str_replace('---$price---', $row['Price'], $temp_html);
+            // echo ' <img src= "data:image;base64,' . base64_encode($row['Image']) . '" width="300" height="400"/>';
             echo $temp_html;
         }
     }

@@ -48,3 +48,8 @@ input[type=submit] {
     position: sticky;
     top: 100%;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
