@@ -10,13 +10,18 @@ body {
     display: block;
     padding: 14px 16px;
     background-color:white;
+    text-align: center;
 }
 
 
 .link {
-    text-align: center;
     text-decoration: none;
     padding: 14px 16px;
+}
+
+.link-cart{
+    text-decoration: none;
+    
 }
 
 .form-section {
@@ -55,4 +60,9 @@ input[type=submit] {
     margin-left: 50px;
     display: grid;
     grid-template-columns: auto auto auto;
+}
+
+.grid_shoppingcart {
+    display: grid;
+    grid-template-columns: auto auto;
 }
