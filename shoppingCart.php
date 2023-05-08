@@ -15,7 +15,8 @@ if (isset($_POST['buy'])) {
             $session_data = array(
                 'id' => $_GET['id'],
                 'name' => $_POST['name'],
-                'price' => $_POST['price']
+                'price' => $_POST['price'],
+                'quantity' => 1
             );
 
             $_SESSION['cart'][] = $session_data;
@@ -24,7 +25,8 @@ if (isset($_POST['buy'])) {
         $session_data = array(
             'id' => $_GET['id'],
             'name' => $_POST['name'],
-            'price' => $_POST['price']
+            'price' => $_POST['price'],
+            'quantity' => 1
         );
 
         $_SESSION['cart'][] = $session_data;
@@ -33,9 +35,11 @@ if (isset($_POST['buy'])) {
 $total = 0;
 foreach ($_SESSION['cart'] as $key => $value) {
     $temp_html = $html_pieces[1];
+
     $temp_html = str_replace('---$id---', $value['id'], $temp_html);
     $temp_html = str_replace('---$name---', $value['name'], $temp_html);
     $temp_html = str_replace('---$price---', $value['price'], $temp_html);
+    $temp_html = str_replace(' ---$quantity---', $value['quantity'], $temp_html);
     //echo $value['id'] . '<br>';
     $total += $value['price'];
     echo $temp_html;
