@@ -8,7 +8,7 @@ if (isset($_POST['log-in'])) {
     $password = $_POST['password'];
 
 
-    $select = mysqli_query($conn, "SELECT * FROM Users WHERE Email = '$name' AND password ='$password'");
+    $select = mysqli_query($conn, "SELECT * FROM Users WHERE Name = '$name' AND password ='$password'");
     $row = mysqli_fetch_array($select);
 
     if (empty($row)) {

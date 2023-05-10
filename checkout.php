@@ -28,14 +28,26 @@ $mail->isHTML(true);
 
 if (isset($_POST['checkout'])) {
 
-    /* $from = "testphpsendmail96@gmail.com";
-    $to = $_SESSION['name'];
+    $from = "testphpsendmail96@gmail.com";
+    $to = $_SESSION['email'];
+    $price = $_POST['price'];
+
+    //echo $_SESSION['email'];
 
     $subject = "Order";
-    $message = "new message";
+    $message = " Hi " . $_SESSION['name'] . " Your order: ";
 
+    $date = date("d/m/Y");
+
+    $items = sizeof($_SESSION['cart']) . " items <br>";
+    $count = 1;
     foreach ($_SESSION['cart'] as $key => $value) {
+        $items .= $count . " : id : " . $value['id'] . " price : " . $value['price'] . " quantity : " . $value['quantity'] . "<br>";
+        $count++;
     }
+
+
+    $payment = "Payment method : Invoice  <br> Total price : " . $price;
 
 
     $mail->setFrom($from);
@@ -44,7 +56,7 @@ if (isset($_POST['checkout'])) {
 
     $mail->Subject = $subject;
 
-    $mail->Body = $message . '';
+    $mail->Body = $message . "<br>" . $date . "<br>" . $items . "<br>" . $payment;
 
     if ($mail->Send()) {
         //echo "Email Sent..";
@@ -53,8 +65,8 @@ if (isset($_POST['checkout'])) {
         echo "Error";
     }
 
-    $mail->smtpClose();*/
+    $mail->smtpClose();
 
-    unset($_SESSION['cart']);
+    //unset($_SESSION['cart']);
     header("location:selectMakeup.php");
 }

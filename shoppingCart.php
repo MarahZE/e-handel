@@ -35,6 +35,13 @@ if (isset($_POST['buy'])) {
             );
 
             $_SESSION['cart'][] = $session_data;
+        } else {
+            foreach ($_SESSION['cart'] as $key => $value) {
+                if ($_GET['id'] == $value['id']) {
+                    $value['quantity']++;
+                    echo $value['quantity'] . "kko";
+                }
+            }
         }
     } else {
         $session_data = array(
