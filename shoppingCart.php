@@ -2,7 +2,22 @@
 session_start();
 $html = file_get_contents("cart.html");
 $html_pieces = explode("<!--===xxx===-->", $html);
-echo $html_pieces[0];
+//echo $html_pieces[0];
+
+if (!empty($_SESSION['cart'])) {
+    $cartSize = sizeof($_SESSION['cart']);
+    //echo $cartSize;
+
+
+    $temp_html = $html_pieces[0];
+    $temp_html = str_replace('---$items---', $cartSize, $temp_html);
+    echo $temp_html;
+} else {
+    $temp_html = $html_pieces[0];
+    $temp_html = str_replace('---$items---', 0, $temp_html);
+    echo $temp_html;
+}
+
 
 
 if (isset($_POST['buy'])) {

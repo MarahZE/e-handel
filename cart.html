@@ -18,12 +18,14 @@
             <a class='link' href="contactviamail.php">Contact us</a>
             
             <a class='fa fa-shopping-cart' href="shoppingCart.php"> </a>
+            <span> ---$items--- </span>
             
            
         </nav>
     </header>
     <main>
         
+    <h1 class="cart_page">Your Cart</h1>
     <section class="grid_shoppingcart">
 
         <section>
@@ -60,7 +62,7 @@
         <p>
             Total:  ---$totaaftership--- kr
         </p>
-        <form action="">
+        <form method="post" action="checkout.php">
             <input type="submit" name="checkout" value="Checkout">
         </form>
         </section>

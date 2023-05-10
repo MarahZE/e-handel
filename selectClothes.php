@@ -6,7 +6,21 @@ include_once 'connectDb.php';
 if (isset($_SESSION['name'])) {
     $html = file_get_contents("clothes.html");
     $html_pieces = explode("<!--===xxx===-->", $html);
-    echo $html_pieces[0];
+    //echo $html_pieces[0];
+
+    if (!empty($_SESSION['cart'])) {
+        $cartSize = sizeof($_SESSION['cart']);
+        //echo $cartSize;
+
+
+        $temp_html = $html_pieces[0];
+        $temp_html = str_replace('---$items---', $cartSize, $temp_html);
+        echo $temp_html;
+    } else {
+        $temp_html = $html_pieces[0];
+        $temp_html = str_replace('---$items---', 0, $temp_html);
+        echo $temp_html;
+    }
 
 
     $sql = "SELECT * FROM Products WHERE Products.Type = 'kläder'";
