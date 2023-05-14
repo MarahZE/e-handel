@@ -68,5 +68,7 @@ if (isset($_POST['checkout'])) {
     $mail->smtpClose();
 
     //unset($_SESSION['cart']);
-    header("location:selectMakeup.php");
+
+    header("location:shoppingCart.php");
+    echo '<script>alert("We have received your order")</script>';
 }
