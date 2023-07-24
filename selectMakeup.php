@@ -9,8 +9,12 @@ if (isset($_SESSION['name'])) {
     //echo $html_pieces[0];
 
     if (!empty($_SESSION['cart'])) {
-        $cartSize = sizeof($_SESSION['cart']);
+        $cartSize = 0;
         //echo $cartSize;
+
+        foreach ($_SESSION['cart'] as $value) {
+            $cartSize += $value['quantity'];
+        }
 
 
         $temp_html = $html_pieces[0];
@@ -21,6 +25,8 @@ if (isset($_SESSION['name'])) {
         $temp_html = str_replace('---$items---', 0, $temp_html);
         echo $temp_html;
     }
+
+
 
 
     $sql = "SELECT * FROM Products WHERE Products.Type = 'makeup'";

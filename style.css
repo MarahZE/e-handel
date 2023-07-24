@@ -6,17 +6,16 @@ body {
     
 }
 
-.navbar {
-    display: block;
-    padding: 14px 16px;
-    background-color:white;
-    text-align: center;
-}
-
 
 .link {
     text-decoration: none;
     padding: 14px 16px;
+}
+
+.link-logout {
+    
+    float:right;
+    text-decoration: none;
 }
 
 .link-cart{
@@ -57,9 +56,10 @@ input[type=submit] {
 }
 
 .grid {
-    margin-left: 50px;
+    margin-left: 35px;
+    margin-right: 50px;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto;
 }
 
 .grid_shoppingcart {
@@ -69,4 +69,27 @@ input[type=submit] {
 
 .cart_page{
     text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.contact-form {
+    text-align: center;
+}
+@media only screen and (min-width: 768px) {
+    .navbar {
+        display: block;
+        padding: 14px 16px;
+        background-color:white;
+        text-align: center;
+    }
+   
+}
+
+@media only screen and (min-width: 1440px) { 
+    .grid {
+        grid-template-columns: auto auto auto;
+    }
 }
