@@ -71,4 +71,28 @@ if (isset($_POST['checkout'])) {
 
     header("location:shoppingCart.php");
     echo '<script>alert("We have received your order")</script>';
+} else if (isset($_POST['Send-message'])) {
+
+    $from = $_SESSION['email'];
+    $to = 'zeibakmarah@gmail.com';
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $mail->setFrom($from);
+
+    $mail->addAddress($to);
+
+    $mail->Subject = $subject;
+
+    $mail->Body = $message;
+
+    if ($mail->Send()) {
+        echo '<script>alert("We have received your message")</script>';
+    } else {
+        echo "Error";
+    }
+
+    $mail->smtpClose();
 }
+
+header("location:shoppingCart.php");

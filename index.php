@@ -18,11 +18,7 @@ session_start();
     <header>
         <nav class='navbar'>
             logo
-            <a class='link' href="logout.php">Log in/out</a>
-            <a class='link' href="selectMakeup.php">Makeup</a>
-            <a class='link' href="selectClothes.php">Clothes</a>
-            <a class='link' href="contactviamail.php">Contact us</a>
-            <a class='fa fa-shopping-cart' href="shoppingCart.php"> </a>
+
         </nav>
     </header>
     <main>
