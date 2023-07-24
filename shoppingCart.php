@@ -41,6 +41,8 @@ if (isset($_POST['buy'])) {
 
         $_SESSION['cart'][] = $session_data;
     }
+
+    header("location:selectMakeup.php");
 }
 
 if (!empty($_SESSION['cart'])) {
@@ -53,10 +55,12 @@ if (!empty($_SESSION['cart'])) {
 
     $temp_html = $html_pieces[0];
     $temp_html = str_replace('---$items---', $cartSize, $temp_html);
+    $temp_html = str_replace('---$user---', $_SESSION['name'], $temp_html);
     echo $temp_html;
 } else {
     $temp_html = $html_pieces[0];
     $temp_html = str_replace('---$items---', 0, $temp_html);
+    $temp_html = str_replace('---$user---', $_SESSION['name'], $temp_html);
     echo $temp_html;
 }
 

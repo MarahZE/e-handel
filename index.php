@@ -17,7 +17,7 @@ session_start();
 <body>
     <header>
         <nav class='navbar'>
-            logo
+            <span class="home-logo">Beauty Home</span>
 
         </nav>
     </header>
