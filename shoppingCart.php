@@ -1,5 +1,5 @@
 <?php
-
+//behandla bestälning och visa produkter i shopping page..
 session_start();
 $html = file_get_contents("cart.html");
 $html_pieces = explode("<!--===xxx===-->", $html);

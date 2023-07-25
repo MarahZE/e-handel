@@ -1,4 +1,5 @@
 <?php
+//skicka ett mail till kund som innehåller bestälning och radera beställning från session-cart
 session_start();
 
 require 'includes/PHPMailer.php';
@@ -32,8 +33,6 @@ if (isset($_POST['checkout'])) {
     $to = $_SESSION['email'];
     $price = $_POST['price'];
 
-    //echo $_SESSION['email'];
-
     $subject = "Order";
     $message = " Hi " . $_SESSION['name'] . " Your order: ";
 
@@ -59,15 +58,12 @@ if (isset($_POST['checkout'])) {
     $mail->Body = $message . "<br>" . $date . "<br>" . $items . "<br>" . $payment;
 
     if ($mail->Send()) {
-        //echo "Email Sent..";
         unset($_SESSION['cart']);
     } else {
         echo "Error";
     }
 
     $mail->smtpClose();
-
-    //unset($_SESSION['cart']);
 
     header("location:shoppingCart.php");
     echo '<script>alert("We have received your order")</script>';

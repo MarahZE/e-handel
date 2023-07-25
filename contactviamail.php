@@ -6,7 +6,6 @@ if (isset($_SESSION['name'])) {
     $html = file_get_contents("contact.html");
     if (!empty($_SESSION['cart'])) {
         $cartSize = 0;
-        //echo $cartSize;
 
         foreach ($_SESSION['cart'] as $value) {
             $cartSize += $value['quantity'];

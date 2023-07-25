@@ -6,12 +6,9 @@ include_once 'connectDb.php';
 if (isset($_SESSION['name'])) {
     $html = file_get_contents("clothes.html");
     $html_pieces = explode("<!--===xxx===-->", $html);
-    //echo $html_pieces[0];
-
 
     if (!empty($_SESSION['cart'])) {
         $cartSize = 0;
-        //echo $cartSize;
 
         foreach ($_SESSION['cart'] as $value) {
             $cartSize += $value['quantity'];
@@ -41,7 +38,6 @@ if (isset($_SESSION['name'])) {
             $temp_html = str_replace('---$id---', $row['ID'], $temp_html);
             $temp_html = str_replace('---$name---', $row['Name'], $temp_html);
             $temp_html = str_replace('---$price---', number_format($row['Price'], 2), $temp_html);
-            // echo ' <img src= "data:image;base64,' . base64_encode($row['Image']) . '" width="300" height="400"/>';
             echo $temp_html;
         }
     }

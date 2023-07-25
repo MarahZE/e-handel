@@ -1,4 +1,6 @@
 <?php
+
+//kontrolera användare uppgifter när logga in
 session_start();
 
 include_once 'connectDb.php';
@@ -17,6 +19,7 @@ if (isset($_POST['log-in'])) {
     } else {
         $_SESSION['name'] = $row['Name'];
         $_SESSION['email'] = $row['Email'];
+
         header("location:selectMakeup.php");
     }
 }
