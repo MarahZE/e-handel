@@ -17,12 +17,27 @@ body {
     float:right;
     text-decoration: none;
 }
-
+.logo {
+    float:left;
+    font-size: larger;
+    
+}
+.home-logo {
+    font-size: 23px;
+}
 .link-cart{
     text-decoration: none;
     
 }
 
+a:hover {
+    color: hotpink;
+  }
+
+.color {
+    color: gray;
+    font-size: larger;
+}
 .form-section {
     text-align: center;
     margin-top: 150px;

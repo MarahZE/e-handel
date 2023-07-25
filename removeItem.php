@@ -1,5 +1,5 @@
 <?php
-
+//ta bort en product from lista
 session_start();
 
 if (isset($_POST['remove_item'])) {

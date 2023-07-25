@@ -1,4 +1,5 @@
 <?php
+//skapa kontakt med db
 session_start();
 
 $dbServername = "localhost";
